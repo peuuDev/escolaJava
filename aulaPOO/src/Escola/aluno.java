@@ -46,4 +46,13 @@ public class aluno {
         return ((prova1 * 2.5) + (prova2 * 2.5) + (trab * 2)) / 7;
     }
 
+	// metodo toString() pra retornar o valor da String dentro de um array(usado em turma.listagemAlunos()). sem isso, printava-se o endereço da memoria dos indices da lista 
+	// deve-se levar em consideração que este metodo é chamado implicitamente na linha 46 da classe turma.
+    public String toString() {
+		capitalizacao cap = new capitalizacao();
+		String nomeFormatado = cap.inicialMaiscula(nome);
+		
+        return "Nome: " + nomeFormatado + "\nMatrícula: " + matricula + " | Média: " + String.format("%.2f", getMedia()) + "| Nota 1: " + getProva1() + "| Nota 2: " + getProva2() + " Nota do trabalho: " + getTrab() + "\n";
+    }
+
 }
